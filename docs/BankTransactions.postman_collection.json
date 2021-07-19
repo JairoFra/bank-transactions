@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "0541f374-80ab-45bc-9468-32353d94aed9",
+		"name": "Bank Transactions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reference\": \"12345a\",\r\n    \"account_iban\": \"ES9820385778983000760236\",\r\n    \"date\": \"2019-07-16T16:55:42.000Z\",\r\n    \"amount\": 193.38,\r\n    \"fee\": 3.18,\r\n    \"description\": \"Restaurant payment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"reference\": \"11111A\",\r\n    \"channel\": \"CLIENT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions/get-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"get-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account_iban\": \"ES3501828131359253197773\",\r\n    \"sortAmountDirection\" : \"DESC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transactions/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
